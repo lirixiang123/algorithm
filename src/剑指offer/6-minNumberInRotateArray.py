@@ -9,5 +9,18 @@ NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 class Solution:
     def minNumberInRotateArray(self, rotateArray):
         # write code here
-        pass
-        
+        if len(rotateArray) == 0:return
+        i , j = 0, len(rotateArray) - 1
+        while i < j:
+            if rotateArray[i] < rotateArray[j]:
+                return rotateArray[i]
+            mid = (i + j)  >> 1
+            if rotateArray[mid] > rotateArray[j]:
+                i = mid + 1
+            elif rotateArray[mid] < rotateArray[j]:
+                j = mid
+            else:
+                i += 1
+        return rotateArray[i]
+
+
