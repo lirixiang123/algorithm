@@ -57,7 +57,6 @@ class Solution:
                 q.get()
                 if node.left:q.put(node.left)
                 if node.right:q.put(node.right)
-
                 cur = node.left
                 node.left = node.right
                 node.right = cur

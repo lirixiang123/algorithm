@@ -1,5 +1,5 @@
-print(None == [])
-print(101>>1)
-n = -1234
-n = (n-1)& n
-print(n)
+res = [[1,2,3],[2,3,4],[5,6,7]]
+
+l = res.pop()[::-1]
+print(res)
+print(l)
