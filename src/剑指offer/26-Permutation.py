@@ -16,3 +16,21 @@
 class Solution:
     def Permutation(self, ss):
         # write code here
+
+        if len(ss) == 1 or len(ss) == 0:
+            return ss
+
+        sl = []
+        for i in range(len(ss)):
+            for j in self.Permutation(ss[:i]+ss[i+1:]):
+                sl.append(ss[i] + j)
+
+        sl = sorted(list(set(sl)))
+        return sl
+
+
+
+
+s =Solution()
+sl = s.Permutation("aa")
+print(sl)
