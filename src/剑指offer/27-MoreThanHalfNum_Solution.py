@@ -12,4 +12,14 @@
 # -*- coding:utf-8 -*-
 class Solution:
     def MoreThanHalfNum_Solution(self, numbers):
-        # write code here
+        count = 0
+        numbers.sort()
+        res = numbers[len(numbers)/2]
+        for i in numbers:
+            if i == res:
+                count +=1
+        if count >len(numbers)/2:
+            return res
+        else:
+            return 0
+

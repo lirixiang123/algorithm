@@ -1,2 +1,2 @@
-for i in range(5,-1,-1):
-    print(i)
+i = 21/10 %10
+print(i)
