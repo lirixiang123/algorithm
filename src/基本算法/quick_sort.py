@@ -5,32 +5,37 @@
 快速排序是所有内部排序算法中平均性能最优的一种排序算法
 """
 
-def quick_sort(ll, low, high):
+def quick_sort(A,p,r,k):
     """
     :param ll: 列表
     :param low: 最小索引
     :param high: 最大索引
     :return: 列表
     """
-    if low < high:
-        point = ll[low]
-        i = low
-        j = high
-        while i < j:
-            while i < j and ll[j] >= point:
-                j -= 1
-            ll[i], ll[j] = ll[j], ll[i]
-            while i < j and ll[i] <= point:
-                i += 1
-            ll[j], ll[i] = ll[i], ll[j]
-        ll[i] = point
-        quick_sort(ll, low, i-1)
-        quick_sort(ll, i+1, high)
+
+
+    def partition(A, p, r):
+        pivot = A[r]
+        i = p
+        for j in range(p, r):
+            if A[j] < pivot:
+                A[i], A[j] = A[j], A[i]
+                i = i + 1
+        A[i], A[r] = A[r], A[i]
+        return i
+
+
+    q =  partition(A, p, r)
+    if q - p == k - 1:
+        return A[q]
+    elif q - p> k - 1:
+        return quick_sort(A,p,q - 1,k)
+    else:
+        return quick_sort(A,q + 1,r,k-1-(q-p))
 
 
 ll = [10, 5, 1, 4, 14, 85, 21, 7, 15, 5, 48, 48, 46, 88, 84, 254, 8498, 4984, 5, 51651, 651, 6516, 156, 1651, 651, 61,
       61, 651, 651, 65]
-n = len(ll)
-quick_sort(ll, 0, n-1)
+res = quick_sort(ll, 0, len(ll)-1,3)
 print(ll)
-
+print(res)

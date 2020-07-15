@@ -1,22 +1,29 @@
-def merge_sort(alist):
-    n = len(alist)
+def merge_sort(array):
+    n = len(array)
     if n<=1:
-        return alist
+        return array
     mid = n//2
-    left = merge_sort(alist[:mid])
-    right = merge_sort(alist[mid:])
-    left_p, right_p = 0,0
-    result = []
-    while left_p < len(left) and right_p < len(right):
+    left = merge_sort(array[:mid])
+    right = merge_sort(array[mid:])
+    return merge(left,right)
 
-        if left[left_p]<right[right_p]:
-            result.append(left[left_p])
-            left_p += 1
+def merge(left,right):
+    res = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            res.append(left[i])
+            i += 1
         else:
-            result.append(right[right_p])
-            right_p += 1
+            res.append(right[j])
+            j += 1
 
-    result += left[left_p:]
-    result += right[right_p:]
-    return result
+    res += left[i:]
+    res += right[j:]
+    return res
+
+
+    
+res = merge_sort([8,4,5,6,7])
+print(res)
 

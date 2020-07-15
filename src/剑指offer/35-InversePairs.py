@@ -13,11 +13,8 @@
 题目保证输入的数组中没有的相同的数字
 
 数据范围：
-
 	对于%50的数据,size<=10^4
-
 	对于%75的数据,size<=10^5
-
 	对于%100的数据,size<=2*10^5
 
 示例1
@@ -31,3 +28,4 @@
 class Solution:
     def InversePairs(self, data):
         # write code here
+        pass
