@@ -18,4 +18,18 @@
 class Solution:
     def EntryNodeOfLoop(self, pHead):
         # write code here
-        pass
+        slow,fast = pHead,pHead
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+            if fast == slow:
+                break
+
+        fast = pHead
+        if fast == None or fast.next == None:
+            return None
+
+        while fast != slow:
+            fast = fast.next
+            slow = slow.next
+        return slow
