@@ -28,19 +28,19 @@
 #         self.left = None
 #         self.right = None
 #方法一:递归
-# class Solution:
-#     # 返回镜像树的根节点
-#     def Mirror(self, root):
-#         # write code here
-#         if not root:return
-#         self.dfs(root)
-#
-#     def dfs(self,r):
-#         if not r:return
-#         lval = self.dfs(r.left)
-#         rval = self.dfs(r.right)
-#         r.left,r.right = rval,lval
-#         return r
+class Solution:
+    # 返回镜像树的根节点
+    def Mirror(self, root):
+        # write code here
+        if not root:return
+        self.dfs(root)
+
+    def dfs(self,r):
+        if not r:return
+        lval = self.dfs(r.left)
+        rval = self.dfs(r.right)
+        r.left,r.right = rval,lval
+        return r
 
 #方法二:层次遍历
 import queue

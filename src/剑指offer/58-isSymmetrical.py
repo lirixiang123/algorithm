@@ -17,4 +17,14 @@
 class Solution:
     def isSymmetrical(self, pRoot):
         # write code here
-        pass
+        if not pRoot:return True
+        return self.dfs(pRoot.left,pRoot.right)
+
+
+    def dfs(self,left,right):
+        if not left and not right: return True
+        if left != None and right != None:
+            if left.val == right.val and self.dfs(left.left,right.right) and self.dfs(left.right,right.left):
+                return True
+
+        return False
