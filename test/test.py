@@ -1,11 +1,12 @@
-d = {
-    "a":1,
-    "b":2,
-    "c":3,
-}
-b = [1,2,3,4,5,6]
 
-dp = [[False for _ in range(3)] for _ in range(4)]
-dp.pop()
-print(dp.pop())
-print(246&1)
+def f(n):
+    print(n)
+    if n == 0:
+        return 1
+    if n== 2:
+        return 2
+    n = f(n - 1)
+
+
+
+l = f(7)

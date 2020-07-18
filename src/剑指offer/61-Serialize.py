@@ -16,16 +16,41 @@
 
 例如，我们可以把一个只有根节点为1的二叉树序列化为"1,"，然后通过自己的函数来解析回这个二叉树
 """
+
+
 # -*- coding:utf-8 -*-
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
+# -*- coding:utf-8 -*-
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
+
 class Solution:
+    ss = []
+
     def Serialize(self, root):
-        # write code here
-        pass
+        if root is None:
+            return '#,'
+        return str(root.val) + ',' + self.Serialize(root.left) + self.Serialize(root.right)
+
     def Deserialize(self, s):
-        # write code here
-        pass
+        if len(s) == 0:
+            return None
+        if s[0] == '#':
+            return None
+        self.ss = s.split(',')
+        return self.reconstruct()
+
+    def reconstruct(self):
+        val = self.ss[0]
+        if val == '#':
+            self.ss.pop(0)
+            return None
+
+        root = TreeNode(int(val))
+        self.ss.pop(0)
+        root.left = self.reconstruct()
+        root.right = self.reconstruct()
+        return root
