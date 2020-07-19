@@ -26,6 +26,41 @@
 """
 # -*- coding:utf-8 -*-
 class Solution:
+    def __init__(self):
+        self.count = 0
+
     def InversePairs(self, data):
         # write code here
-        pass
+        if len(data) < 2:return 0
+        self.mergeSort(data)
+        return self.count % 1000000007
+
+    def mergeSort(self,data):
+        if len(data) < 2:return data
+        mid = len(data) // 2
+        left = self.mergeSort(data[:mid])
+
+        right = self.mergeSort(data[mid:])
+
+        i,j = 0,0
+        merged = []
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                merged.append(left[i])
+
+                i += 1
+            else:
+                merged.append(right[j])
+                j += 1
+                self.count += (len(left) - i)
+
+        return merged + left[i:] + right[j:]
+
+
+
+
+
+
+s =Solution()
+res = s.InversePairs([3,6,4,0,7,9,2,1,5])
+
