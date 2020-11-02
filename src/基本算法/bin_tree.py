@@ -65,14 +65,9 @@ class Tree(object):
 
 
 
-if __name__ == '__main__':
-    tree = Tree()
-    tree.add(1)
-    tree.add(2)
-    tree.add(3)
-    tree.add(4)
-    tree.add(5)
-    tree.breadth_travel()
+
+
+
 
 
 
