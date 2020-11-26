@@ -3,7 +3,7 @@
 # @Time    : 2020/9/21 16:58
 # @Author  : lirixiang
 # @Email   : 565539277@qq.com
-# @File    : 4.py
+# @File    : pile.py
 class Node():
     def __init__(self,val):
         self.val = val

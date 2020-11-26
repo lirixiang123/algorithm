@@ -3,7 +3,7 @@
 # @Time    : 2020/10/21 21:44
 # @Author  : lirixiang
 # @Email   : 565539277@qq.com
-# @File    : test1.py
+# @File    : findFriendNum.py
 class Solution:
     def findFriendNum(self, M):
         def dfs(x, y, n, m):

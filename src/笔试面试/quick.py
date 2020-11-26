@@ -3,7 +3,7 @@
 # @Time    : 2020/10/11 20:57
 # @Author  : lirixiang
 # @Email   : 565539277@qq.com
-# @File    : 7.py
+# @File    : quick.py
 l = input()
 i = 0
 j = len(l)-1

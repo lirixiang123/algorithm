@@ -3,7 +3,7 @@
 # @Time    : 2020/10/11 20:40
 # @Author  : lirixiang
 # @Email   : 565539277@qq.com
-# @File    : 6.py
+# @File    : get.py
 class Solution:
     def get(self,s):
         import collections
