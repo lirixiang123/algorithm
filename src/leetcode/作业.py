@@ -17,6 +17,7 @@ import collections
 """
 3.152 leetcode
 """
+
 class Solution(object):
     def levelOrder(self, root):
         """
@@ -41,3 +42,5 @@ class Solution(object):
 
         return res
 
+import pymysql
+pymysql.connect

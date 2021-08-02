@@ -30,5 +30,8 @@ class Solution:
             nums[0], nums[i] = nums[i], nums[0]
             size -= 1
             maxheap(0)
-
+        print(nums)
         return nums[0]
+
+
+

@@ -11,8 +11,8 @@ class Solution:
                 min = prices[i]
             if prices[i] - min > max:
                 max = prices[i] - min
-            return  max
+        return  max
 
-
-
-
+s = Solution()
+a = s.maxProfit([2,3,4,5,6])
+print(a)

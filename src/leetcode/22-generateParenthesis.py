@@ -24,7 +24,6 @@
 class Solution:
     def generateParenthesis(self, n: int):
         ans = []
-
         def backtrack(l, r, s):
             if l == 0 and r == 0:
                 ans.append(s)
